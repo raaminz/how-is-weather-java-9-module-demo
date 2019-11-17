@@ -1,0 +1,30 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+    id 'org.beryx.jlink' version '2.12.0'
+}
+
+group 'weather-demo'
+version '1.0'
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation project(":logic")
+}
+
+javafx {
+    version = "13"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+repositories {
+    mavenCentral()
+}
+
+mainClassName = "$moduleName/com.compilepodcast.weather.ui.Main"
+
+jlink {
+    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+    launcher {
+        name = 'How is weather'
+    }
+}

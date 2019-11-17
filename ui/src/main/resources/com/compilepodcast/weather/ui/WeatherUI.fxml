@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.compilepodcast.weather.ui.WeatherController"
+      prefHeight="400.0" prefWidth="300.0" alignment="CENTER">
+
+        <ImageView fx:id="logo" />
+        <Text fill="#f7a923" fx:id="day"/>
+        <Text fill="#f7a923" style="-fx-font-size: 10pt;" fx:id="date"/>
+        <VBox alignment="CENTER" spacing="10">
+                <ImageView fx:id="icon" />
+                <Text fill="#f7a923" fx:id="timeZone" style="-fx-font-size: 10pt;" />
+                <Text fx:id="summary"/>
+                <Text fx:id="temperature"/>
+        </VBox>
+</VBox>
